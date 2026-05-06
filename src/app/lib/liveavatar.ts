@@ -1,32 +1,19 @@
-/**
- * LiveAvatar API Integration Utilities
- */
+// Client-side only — only import from 'use client' components
 
-/**
- * Fetches a temporary session token from the backend API.
- */
-export async function getSessionToken(): Promise<{ token: string } | null> {
-  try {
-    const response = await fetch('/api/liveavatar');
-    if (!response.ok) throw new Error('Failed to fetch token');
-    return await response.json();
-  } catch (error) {
-    console.error('Error getting LiveAvatar token:', error);
-    return null;
+export async function fetchSessionToken(): Promise<string> {
+  const res = await fetch('/api/liveavatar', { method: 'POST' });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error ?? 'Failed to create LiveAvatar session');
   }
+  const { session_token } = await res.json();
+  return session_token;
 }
 
-/**
- * Placeholder for starting a WebRTC session with the avatar.
- */
-export async function startAvatarSession(token: string) {
-  // Logic to initialize WebRTC and connect to HeyGen/LiveAvatar servers
-  console.log('Initializing avatar session with token:', token);
-}
-
-/**
- * Placeholder for stopping the session.
- */
-export async function stopAvatarSession() {
-  // Logic to close WebRTC data channels and streams
+export async function stopSessionOnServer(sessionToken: string): Promise<void> {
+  await fetch('/api/liveavatar', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ session_token: sessionToken }),
+  }).catch(() => {});
 }

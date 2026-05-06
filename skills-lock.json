@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "liveavatar-integrate": {
+      "source": "heygen-com/liveavatar-agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/liveavatar-integrate/SKILL.md",
+      "computedHash": "2707f8f65c9b29eaf8ae025282f656a1e40b37a7595f348a3d324223055fdf89"
+    }
+  }
+}
