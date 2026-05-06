@@ -90,7 +90,7 @@ export default function AIVideoAgent() {
       setIsTyping(true);
       setTimeout(() => {
         setIsTyping(false);
-        addAIMessage("Hello! I'm the DevKit Market assistant. I can help you find the right starter kit, explain features, or answer any questions about our products and tools. What would you like to know?");
+        addAIMessage("Hello! I'm Rubenius. I can help you find information, explain features, or answer any questions about our services. What would you like to know?");
         simulateSpeaking(4000);
       }, 1500);
     }, 800);
