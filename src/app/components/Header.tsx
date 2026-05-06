@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+import { ThemeToggle } from './ThemeToggle';
+
 interface HeaderProps {
   status: 'idle' | 'live' | 'ended';
   timer: string;
@@ -29,6 +31,7 @@ export default function Header({ status, timer }: HeaderProps) {
       </div>
       
       <div className="flex items-center gap-2 flex-shrink-0 px-4">
+        <ThemeToggle />
         <div 
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-300 ${statusColors[status]}`}
           data-status={status}

@@ -48,7 +48,7 @@ export default function AvatarPanel({
         )}
 
         {/* Speaking indicator */}
-        <div className={`absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-black/70 backdrop-blur-xl rounded-full transition-opacity duration-300 pointer-events-none ${isSpeaking ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-bg-card/80 backdrop-blur-xl border border-border-subtle rounded-full transition-opacity duration-300 pointer-events-none ${isSpeaking ? 'opacity-100' : 'opacity-0'}`}>
           <div className="flex items-end gap-[2px] h-4">
             <span className="w-[3px] h-1.5 bg-accent rounded-[2px] animate-bar-bounce" style={{ animationDelay: '0s' }} />
             <span className="w-[3px] h-3 bg-accent rounded-[2px] animate-bar-bounce" style={{ animationDelay: '0.15s' }} />
@@ -56,7 +56,7 @@ export default function AvatarPanel({
             <span className="w-[3px] h-3.5 bg-accent rounded-[2px] animate-bar-bounce" style={{ animationDelay: '0.45s' }} />
             <span className="w-[3px] h-1.5 bg-accent rounded-[2px] animate-bar-bounce" style={{ animationDelay: '0.6s' }} />
           </div>
-          <span className="text-xs text-white/80 font-medium">Speaking...</span>
+          <span className="text-xs text-text-primary font-medium">Speaking...</span>
         </div>
       </div>
 
