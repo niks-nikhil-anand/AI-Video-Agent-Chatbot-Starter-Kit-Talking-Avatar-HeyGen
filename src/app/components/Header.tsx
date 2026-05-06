@@ -18,12 +18,12 @@ export default function Header({ status, timer }: HeaderProps) {
     <header className="flex items-center justify-between padding-x-5 py-3 bg-bg-secondary border-b border-border-subtle z-10 gap-3">
       <div className="flex items-center gap-3 min-w-0 px-4">
         <div className="w-[34px] h-[34px] bg-gradient-to-br from-accent to-[#818cf8] rounded-lg flex items-center justify-center font-bold text-sm text-white shadow-[0_0_40px_rgba(99,102,241,0.15)] flex-shrink-0">
-          DK
+          RU
         </div>
         <div>
-          <div className="text-[15px] font-semibold text-text-primary truncate">DevKit AI Avatar</div>
+          <div className="text-[15px] font-semibold text-text-primary truncate">Rubenius AI Agent</div>
           <div className="text-[12px] text-text-muted mt-0.5 hidden sm:block">
-            Powered by LiveAvatar &middot; Gemini &middot; Vectorless RAG
+            Powered by Rubenius &middot; Gemini &middot; Vectorless RAG
           </div>
         </div>
       </div>
