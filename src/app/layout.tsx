@@ -15,22 +15,22 @@ const jbMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rubenius AI Agent | Next-Gen Video Chatbot",
-  description: "Real-time AI video agent powered by Rubenius. Talk to a lifelike digital human that reasons over your documents.",
-  keywords: ["Rubenius", "AI Avatar", "Video Chatbot", "Gemini AI", "Vectorless RAG"],
+  title: "Devkit-market AI Agent | Next-Gen Video Chatbot",
+  description: "Real-time AI video agent powered by Devkit-market. Talk to a lifelike digital human that reasons over your documents.",
+  keywords: ["Devkit-market", "AI Avatar", "Video Chatbot", "Gemini AI", "Vectorless RAG"],
   openGraph: {
-    title: "Rubenius AI Agent | Next-Gen Video Chatbot",
-    description: "Experience the future of conversational AI with Rubenius, your lifelike talking avatar agent.",
-    url: "https://rubenius.ai",
-    siteName: "Rubenius AI",
+    title: "Devkit-market AI Agent | Next-Gen Video Chatbot",
+    description: "Experience the future of conversational AI with Devkit-market, your lifelike talking avatar agent.",
+    url: "https://devkitmarket.com",
+    siteName: "Devkit-market AI",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rubenius AI Agent",
-    description: "Real-time AI video agent powered by Rubenius and Google Gemini.",
-    creator: "@rubenius",
+    title: "Devkit-market AI Agent",
+    description: "Real-time AI video agent powered by Devkit-market and Google Gemini.",
+    creator: "@devkitmarket",
   },
 };
 

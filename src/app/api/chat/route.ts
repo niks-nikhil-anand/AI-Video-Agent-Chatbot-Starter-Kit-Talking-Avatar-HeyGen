@@ -4,7 +4,7 @@ import { DEVKIT_KNOWLEDGE } from '../../constants/knowledge';
 const GEMINI_MODEL = 'gemini-2.0-flash';
 const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta';
 
-const SYSTEM_PROMPT = `You are Rubenius, an AI assistant for DevKit Market — a marketplace for production-ready starter kits and developer tools built by Nikhil Anand.
+const SYSTEM_PROMPT = `You are Devkit-market, an AI assistant for DevKit Market — a marketplace for production-ready starter kits and developer tools built by Nikhil Anand.
 
 You have access to the full DevKit Market knowledge base below. Use it to answer questions accurately. When a user asks about products, pricing, or the creator, refer to this data.
 
