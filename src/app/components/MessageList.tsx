@@ -39,7 +39,7 @@ export default function MessageList({ messages, isTyping }: MessageListProps) {
   }
 
   return (
-    <div className="flex-1 overflow-y-auto px-4 py-3 flex flex-col gap-2.5 custom-scrollbar scroll-smooth">
+    <div className="flex-1 overflow-y-scroll px-4 py-3 flex flex-col gap-2.5 custom-scrollbar scroll-smooth">
       {messages.map((msg) => {
         if (msg.role === 'system') {
           return (
