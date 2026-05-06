@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
@@ -9,37 +7,49 @@ interface HeaderProps {
   timer: string;
 }
 
+const STATUS_CONFIG = {
+  idle:  { label: 'Ready',  dot: 'bg-text-muted',       pill: 'text-text-muted border-border-subtle bg-surface-glass' },
+  live:  { label: 'Live',   dot: 'bg-green animate-pulse-dot', pill: 'text-green border-green/25 bg-green/8' },
+  ended: { label: 'Ended',  dot: 'bg-[#ef4444]',         pill: 'text-[#ef4444] border-[#ef4444]/20 bg-[#ef4444]/8' },
+} as const;
+
 export default function Header({ status, timer }: HeaderProps) {
-  const statusColors = {
-    idle: 'text-text-secondary bg-surface-glass border-border-subtle',
-    live: 'text-green border-green/30 bg-green/15',
-    ended: 'text-red border-red/20 bg-red/15'
-  };
+  const cfg = STATUS_CONFIG[status];
 
   return (
-    <header className="flex items-center justify-between padding-x-5 py-3 bg-bg-secondary border-b border-border-subtle z-10 gap-3">
-      <div className="flex items-center gap-3 min-w-0 px-4">
-        <div className="w-[34px] h-[34px] bg-gradient-to-br from-accent to-[#818cf8] rounded-lg flex items-center justify-center font-bold text-sm text-white shadow-[0_0_40px_rgba(99,102,241,0.15)] flex-shrink-0">
-          RU
-        </div>
-        <div>
-          <div className="text-[15px] font-semibold text-text-primary truncate">Rubenius AI Agent</div>
-          <div className="text-[12px] text-text-muted mt-0.5 hidden sm:block">
-            Powered by Rubenius &middot; Gemini &middot; Vectorless RAG
+    <header className="h-14 flex items-center justify-between px-5 bg-bg-secondary/80 backdrop-blur-xl border-b border-border-subtle shrink-0 z-20">
+
+      {/* Brand */}
+      <div className="flex items-center gap-3">
+        <div className="relative shrink-0">
+          <div className="w-8 h-8 rounded-xl bg-linear-to-br from-accent to-[#818cf8] flex items-center justify-center text-[11px] font-bold text-white shadow-[0_0_18px_rgba(99,102,241,0.35)]">
+            RU
           </div>
         </div>
-      </div>
-      
-      <div className="flex items-center gap-2 flex-shrink-0 px-4">
-        <ThemeToggle />
-        <div 
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-300 ${statusColors[status]}`}
-          data-status={status}
-        >
-          <span className={`w-1.5 h-1.5 rounded-full ${status === 'live' ? 'bg-[#22c55e] animate-pulse-dot' : status === 'ended' ? 'bg-[#ef4444]' : 'bg-text-muted'}`} />
-          <span className="capitalize">{status === 'idle' ? 'Ready' : status}</span>
+        <div className="leading-none">
+          <div className="text-[14px] font-semibold text-text-primary tracking-tight">Rubenius</div>
+          <div className="hidden sm:block text-[11px] text-text-muted mt-0.5">AI Video Agent</div>
         </div>
-        <div className={`font-mono text-sm font-medium px-2.5 py-1.5 bg-surface-glass border border-border-subtle rounded-full tracking-wider min-w-[72px] text-center transition-all duration-300 ${status === 'live' ? 'text-green border-green/25' : 'text-text-secondary'}`}>
+      </div>
+
+      {/* Controls */}
+      <div className="flex items-center gap-2">
+        <ThemeToggle />
+
+        {/* Status pill */}
+        <div className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-[11px] font-medium border transition-all duration-300 ${cfg.pill}`}>
+          <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${cfg.dot}`} />
+          {cfg.label}
+        </div>
+
+        {/* Timer */}
+        <div
+          className={`font-mono text-[12px] font-medium px-2.5 py-1.5 rounded-full border transition-all duration-300 min-w-[58px] text-center tabular-nums
+            ${status === 'live'
+              ? 'text-green border-green/25 bg-green/8'
+              : 'text-text-muted border-border-subtle bg-surface-glass'
+            }`}
+        >
           {timer}
         </div>
       </div>
