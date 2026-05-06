@@ -6,10 +6,11 @@ import { ThemeProvider } from "./components/theme-provider";
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 const jbMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+  variable: "--font-jb-mono",
   subsets: ["latin"],
 });
 
